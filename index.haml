@@ -1,0 +1,22 @@
+!!! 5
+%html{:lang => 'en'}
+  %head
+    %meta{:charset => 'utf-8'}
+    %title Shakespeare Census - Unverified Copies
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => 'https://fonts.googleapis.com/css?family=Raleway:300,400,500'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => 'style.css'}
+    :css
+      header { text-align: center; }
+  %body
+    %div.frame-container
+      %div.outer-frame
+        %header
+          %h1 Shakespeare Census - Unverified Copies
+          %h2 #{remaining} unverified copies remaining
+        %div.wrapper
+          %table.play-detail-set
+            #{header}
+            - locations.sort.each do |location, copies|
+              - copies.each do |copy|
+                #{copy}
