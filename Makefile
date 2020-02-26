@@ -1,7 +1,7 @@
 all: index.html style.css
 
 index.html: unverified.rb index.haml Gemfile Gemfile.lock shakespearecensus.org
-	bundle exec ./unverified.rb shakespearecensus.org/copy/*/index.html
+	bundle install && bundle exec ./unverified.rb shakespearecensus.org/copy/*/index.html
 
 shakespearecensus.org:
 	wget -m 'https://shakespearecensus.org/'
